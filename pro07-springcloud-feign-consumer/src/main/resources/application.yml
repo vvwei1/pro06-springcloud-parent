@@ -1,0 +1,13 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: atguigu-feign-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka/
+#      降级机制
+feign:
+  circuitbreaker:
+    enabled: true

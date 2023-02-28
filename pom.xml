@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.atguigu.spring.cloud</groupId>
+    <artifactId>pro06-spring-cloud-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>pro07-springcloud-common</module>
+        <module>pro08-springcloud-provider</module>
+        <module>pro09-springcloud-consumer</module>
+        <module>pro10-springcloud-Eureka</module>
+        <module>pro07-springcloud-feign-consumer</module>
+        <module>pro11-springcloud-dashboard</module>
+        <module>pro12-springcloud-zuul</module>
+
+    </modules>
+    <!--永久设置默认jdk版本-->
+    <properties>
+        <aspectj.version>1.8.10</aspectj.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+    </dependencies>
+    <!--<properties>-->
+        <!--<maven.compiler.source>15</maven.compiler.source>-->
+        <!--<maven.compiler.target>15</maven.compiler.target>-->
+    <!--</properties>-->
+    <!--父工程依赖管理-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 导入 SpringCloud 需要使用的依赖信息 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2020.0.0</version>
+                <type>pom</type>
+                <!-- import 依赖范围表示将 spring-cloud-dependencies 包中的依赖信息导入 -->
+                <scope>import</scope>
+            </dependency>
+             <!--导入 SpringBoot 需要使用的依赖信息-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.4.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
